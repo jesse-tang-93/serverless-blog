@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import reportWebVitals from './reportWebVitals';
+import 'normalize.css'
+// import 'antd/dist/antd.less'
+import './admin.css'
 
+
+import HomeManage from './container/HomeManage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div>admin page</div>
+    <HomeManage/>
   </React.StrictMode>
 );
 
