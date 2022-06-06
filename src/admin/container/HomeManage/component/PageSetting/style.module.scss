@@ -1,0 +1,9 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  span{
+    display: block;
+    min-width: 80px;
+  }
+}

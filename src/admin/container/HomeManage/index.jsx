@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef,} from 'react';
 import { Layout, Menu } from 'antd';
+import AreaList from "./component/AreaList"
+import PageSetting from "./component/PageSetting"
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -10,9 +12,14 @@ import {
 import './home.scss'
 
 const { Header, Sider, Content } = Layout;
+
 const HomeManage = () => {
 
   const [collapsed, setCollapsed] = useState(false);
+
+
+  
+  const pageSettingRef = useRef()
 
   return (
     <Layout>
@@ -26,12 +33,15 @@ const HomeManage = () => {
             {
               key: '1',
               icon: <UserOutlined />,
-              label: 'nav 1',
+              label: '首页内容管理',
             },
             {
               key: '2',
               icon: <VideoCameraOutlined />,
-              label: 'nav 2',
+              label: '返回用户页面',
+              onClick:()=>{
+                window.location.href = "/"
+              }
             },
             {
               key: '3',
@@ -56,7 +66,9 @@ const HomeManage = () => {
             minHeight: 800,
           }}
         >
-          Content
+          <PageSetting ref={pageSettingRef}/>
+          <AreaList/>
+         
         </Content>
       </Layout>
     </Layout>
